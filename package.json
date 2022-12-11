@@ -1,0 +1,32 @@
+{
+  "name": "ntop",
+  "version": "0.0.1",
+  "description": "Node CLI runtime profiler - easily debug unexpected high CPU usage",
+  "main": "ntop.js",
+  "bin": {
+    "run-func": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DVLP/ntop.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "cli",
+    "runtime",
+    "profiler"
+  ],
+  "author": "Pawel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DVLP/ntop/issues"
+  },
+  "homepage": "https://github.com/DVLP/ntop#readme",
+  "dependencies": {
+    "node-ipc": "^11.1.0"
+  }
+}
