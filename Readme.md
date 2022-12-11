@@ -44,17 +44,17 @@ npx ntop 12345 5000 -v
 
 Example output with "breadcrumbs":
 
-* (garbage collector)     | 4.191ms |
-* utils.bulkPreparePacket | 3.034ms | file:///home/app/src/Utils.js:91:26
+* (garbage collector)     | 4.191ms |\
+* utils.bulkPreparePacket | 3.034ms | file:///home/app/src/Utils.js:91:26\
  < prepareBulkData < (anonymous) < update < emit < update < processTick < (anonymous) < listOnTimeout < processTimers
 
-* (anonymous)             | 2.574ms | evalmachine.<anonymous>:3:14
+* (anonymous)             | 2.574ms | evalmachine.<anonymous>:3:14\
  < listOnTimeout < processTimers
 
-* prepareBulkData         | 1.516ms | file:///home/app/src/controllers/Map.js:672:17
+* prepareBulkData         | 1.516ms | file:///home/app/src/controllers/Map.js:672:17\
  < (anonymous) < update < emit < update < processTick < (anonymous) < listOnTimeout < processTimers
 
-* hasCallback             | 1.141ms | file:///home/app/src/Scripting.js:271:13
+* hasCallback             | 1.141ms | file:///home/app/src/Scripting.js:271:13\
  < update < emit < update < processTick < (anonymous) < listOnTimeout < processTimers
 
 
@@ -63,44 +63,43 @@ Experimental flame chart
 npx ntop 12345 5000 -f
 ```
 
-Flame chart:
-
-- (root) 3056.191ms
--- processTimers 0.661ms
---- listOnTimeout 0.661ms
----- (anonymous function) 0.661ms
------ processTick 0.661ms
------- queueNextAction 0.661ms
-------- setImmediate 0.661ms
--------- Immediate 0.661ms
---------- initAsyncResource 0.661ms
--- processTimers 1.305ms
---- listOnTimeout 1.305ms
----- (anonymous function) 1.305ms
------ processTick 1.305ms
------- update 1.305ms
-------- emit 1.305ms
--------- update 1.305ms
---------- (anonymous function) 1.305ms
--- (garbage collector) 2.185ms
--- processTimers 1.118ms
---- listOnTimeout 1.118ms
----- (anonymous function) 1.118ms
------ processTick 1.118ms
------- update 1.118ms
-------- emit 1.118ms
--------- update 1.118ms
---------- (anonymous function) 1.118ms
----------- prepareBulkData 1.118ms
------------ utils.bulkPreparePacket 1.118ms
--- processTimers 1.471ms
---- listOnTimeout 1.471ms
----- (anonymous function) 1.471ms
------ processTick 1.471ms
------- update 1.471ms
-------- emit 1.471ms
--------- update 1.471ms
---------- (anonymous function) 1.471ms
----------- prepareBulkData 1.471ms
------------ utils.bulkPreparePacket 1.471ms
------------- preparePacket 1.471ms
+"Flame chart" (initial experiment):
+- (root) 3056.191ms\
+-- processTimers 0.661ms\
+--- listOnTimeout 0.661ms\
+---- (anonymous function) 0.661ms\
+----- processTick 0.661ms\
+------ queueNextAction 0.661ms\
+------- setImmediate 0.661ms\
+-------- Immediate 0.661ms\
+--------- initAsyncResource 0.661ms\
+-- processTimers 1.305ms\
+--- listOnTimeout 1.305ms\
+---- (anonymous function) 1.305ms\
+----- processTick 1.305ms\
+------ update 1.305ms\
+------- emit 1.305ms\
+-------- update 1.305ms\
+--------- (anonymous function) 1.305ms\
+-- (garbage collector) 2.185ms\
+-- processTimers 1.118ms\
+--- listOnTimeout 1.118ms\
+---- (anonymous function) 1.118ms\
+----- processTick 1.118ms\
+------ update 1.118ms\
+------- emit 1.118ms\
+-------- update 1.118ms\
+--------- (anonymous function) 1.118ms\
+---------- prepareBulkData 1.118ms\
+----------- utils.bulkPreparePacket 1.118ms\
+-- processTimers 1.471ms\
+--- listOnTimeout 1.471ms\
+---- (anonymous function) 1.471ms\
+----- processTick 1.471ms\
+------ update 1.471ms\
+------- emit 1.471ms\
+-------- update 1.471ms\
+--------- (anonymous function) 1.471ms\
+---------- prepareBulkData 1.471ms\
+----------- utils.bulkPreparePacket 1.471ms\
+------------ preparePacket 1.471ms\
