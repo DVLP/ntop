@@ -1,9 +1,8 @@
-#!/usr/bin/env node
-
+#! /usr/bin/env node
 const { convertToMergedFlameGraph } = require('./flame.js')
 const { exec } = require('child_process')
 const ipc = require('node-ipc').default
-ipc.config.id = 'nodeprof'
+ipc.config.id = 'ntop'
 ipc.config.retry = 1500
 ipc.config.silent = true
 
