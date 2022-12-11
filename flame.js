@@ -140,3 +140,5 @@ function getNodeModuleName(url) {
   if (folderNamePosition === -1 || folderNamePositionEnd === -1) return undefined
   return url.substr(folderNamePosition + 1, folderNamePositionEnd - folderNamePosition - 1)
 }
+
+module.exports = { convertToMergedFlameGraph }
