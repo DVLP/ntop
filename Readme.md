@@ -44,7 +44,7 @@ npx ntop 12345 5000 -v
 
 Example output with "breadcrumbs":
 
-* (garbage collector)     | 4.191ms |\
+* (garbage collector)     | 4.191ms |
 * utils.bulkPreparePacket | 3.034ms | file:///home/app/src/Utils.js:91:26\
  < prepareBulkData < (anonymous) < update < emit < update < processTick < (anonymous) < listOnTimeout < processTimers
 
@@ -102,4 +102,4 @@ npx ntop 12345 5000 -f
 --------- (anonymous function) 1.471ms\
 ---------- prepareBulkData 1.471ms\
 ----------- utils.bulkPreparePacket 1.471ms\
------------- preparePacket 1.471ms\
+------------ preparePacket 1.471ms
