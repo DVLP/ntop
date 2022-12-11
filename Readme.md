@@ -5,23 +5,37 @@ The idea is to be able to quickly see the heaviest currently running Node functi
 Once this is enabled there's no need to restart the app with "--profile" flag so any unexpected high CPU usage can be debugged more easily.
 
 Usage
-`npm i ntop`
+```bash
+npm i ntop
+```
 
 Add to the script to enable communication with CLI tool
-`const ntop = require('ntop')
-ntop()`
+```javascript
+const ntop = require('ntop')
+ntop()
+```
 
 Then run the CLI. It will find all processes enabled for ntop communication
-`npx ntop`
+```bash
+npx ntop
+```
 
 You'll see a list of ntop-enabled Node processes and their corresponding PIDs for convenience. Now you can see the list of functions for any process with
-`npx ntop 12345`
+```bash
+npx ntop 12345
+```
 
 Custom sampling time 5s
-`npx ntop 12345 5000`
+```bash
+npx ntop 12345 5000
+```
 
 Verbose output showing breadcrumbs i.e. to see what called `(anonymous)`
-`npx ntop 12345 5000 -v`
+```bash
+npx ntop 12345 5000 -v
+```
 
 Experimental flame chart
-`npx ntop 12345 5000 -f`
+```bash
+npx ntop 12345 5000 -f
+```
