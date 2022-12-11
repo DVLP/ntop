@@ -4,7 +4,7 @@
   "description": "Node CLI runtime profiler - easily debug unexpected high CPU usage",
   "main": "ntop.js",
   "bin": {
-    "run-func": "cli.js"
+    "ntop": "cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
