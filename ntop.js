@@ -41,4 +41,5 @@ module.exports = () => {
     })
   })
   ipc.server.start()
+  return 'ntop-enabled'
 }

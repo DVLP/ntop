@@ -47,7 +47,23 @@ ipc.serve(() => {
     }
   })
 
-  if (process.argv[2]) profileClient(process.argv[2], process.argv[3] || 3000, process.argv.includes('-v'), process.argv.includes('-f'))
+  if (process.argv[2] === 'inject') {
+    if (process.platform === 'win32') {
+      console.log('Windows support for the injector not yet implemented')
+      return
+    }
+    console.log('Injecting interface into process', process.argv[2])
+    try {
+      cmd('cat commands | { while read l ; do sleep 1; echo $l; done } | NTOP=$(npm -g root)"/ntop" node inspect -p ' + process.argv[3], (resp) => {
+        if (resp.includes('ntop-enabled')) console.log(`The process is now ready for profiling! Run "ntop ${process.argv[3]}"`)
+      })
+    } catch (error) {
+      console.log('Injector error', error)
+    }
+    console.log('...')
+  } else if (process.argv[2]) {
+    profileClient(process.argv[2], process.argv[3] || 3000, process.argv.includes('-v'), process.argv.includes('-f'))
+  }
 })
 ipc.server.start()
 

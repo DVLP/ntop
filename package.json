@@ -1,6 +1,6 @@
 {
   "name": "ntop",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node CLI runtime profiler - easily debug unexpected high CPU usage",
   "main": "ntop.js",
   "bin": {
