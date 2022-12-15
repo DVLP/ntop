@@ -4,7 +4,14 @@ The idea is to be able to quickly see the heaviest currently running Node functi
 
 Once this is enabled there's no need to restart the app with "--profile" flag so any unexpected high CPU usage can be debugged more easily.
 
-Usage
+Usage - with no code changes required(Linux only)
+```bash
+npm i -g ntop
+ntop inject 12345 // where 12345 is the process id
+ntop 12345
+```
+
+Usage with includes in a project
 ```bash
 npm i ntop
 ```
