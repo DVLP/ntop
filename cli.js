@@ -54,6 +54,9 @@ ipc.serve(() => {
     }
     console.log('Injecting interface into process', process.argv[3])
     try {
+      cmd('cat commands', (resp) => {
+        console.log('Run commands', resp)
+      })
       cmd('cat commands | { while read l ; do sleep 2; echo $l; done } | NTOP=$(npm -g root)"/ntop" node inspect -p ' + process.argv[3], (resp) => {
         console.log(resp)
         if (resp.includes('ntop-enabled')) console.log(`The process is now ready for profiling! Run "ntop ${process.argv[3]}"`)
