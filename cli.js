@@ -52,9 +52,10 @@ ipc.serve(() => {
       console.log('Windows support for the injector not yet implemented')
       return
     }
-    console.log('Injecting interface into process', process.argv[2])
+    console.log('Injecting interface into process', process.argv[3])
     try {
-      cmd('cat commands | { while read l ; do sleep 1; echo $l; done } | NTOP=$(npm -g root)"/ntop" node inspect -p ' + process.argv[3], (resp) => {
+      cmd('cat commands | { while read l ; do sleep 2; echo $l; done } | NTOP=$(npm -g root)"/ntop" node inspect -p ' + process.argv[3], (resp) => {
+        console.log(resp)
         if (resp.includes('ntop-enabled')) console.log(`The process is now ready for profiling! Run "ntop ${process.argv[3]}"`)
       })
     } catch (error) {
